@@ -22,14 +22,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
-    new CleanWebpackPlugin(),
   ],
   entry: {
     main: path.resolve(__dirname, './src/js/app.js'),
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
   devServer: {

@@ -1,4 +1,4 @@
-import '../css/main.css';
+import '../css/style.css';
 
 function importAll(r) {
   r.keys().forEach(r)
@@ -28,47 +28,37 @@ window.onclick = function(event) {
     }
 }
 
-//cat slides
-if (document.getElementById("catCont") != null) {
-var slideIndex = 1;
-showSlides(slideIndex);
+//cat slide
+let slides = document.getElementsByClassName("catSlide");
+let dot = document.getElementsByClassName("dot");
+let currentSlide = 0;
 
-var prev = document.getElementsByClassName("prev");
-var next = document.getElementsByClassName("next");
+document.querySelector(".next").addEventListener("click", () => {
+    changeSlide(currentSlide + 1)
+});
+document.querySelector(".prev").addEventListener("click", () => {
+    changeSlide(currentSlide - 1)
+});
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function changeSlide(moveTo) {
+    if (moveTo >= slides.length) {moveTo = 0;}
+    if (moveTo < 0) {moveTo = slides.length - 1;}
+    
+    slides[currentSlide].classList.toggle("active");
+    dot[currentSlide].classList.toggle("active");
+    slides[moveTo].classList.toggle("active");
+    dot[moveTo].classList.toggle("active");
+    
+    currentSlide = moveTo;
 }
 
-prev.onclick = function () {
-  console.log("clicked");
-  showSlides(slideIndex-1);
-}
-
-next.onclick = function () {
-  showSlides(slideIndex+1);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("catSlide");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 0) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
- }
-}
+document.querySelectorAll('.dot').forEach((bullet, bulletIndex) => {
+    bullet.addEventListener('click', () => {
+        if (currentSlide !== bulletIndex) {
+            changeSlide(bulletIndex);
+        }
+    })
+})
 
 //experience description
 function expCollapse () {

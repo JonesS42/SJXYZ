@@ -245,14 +245,47 @@ html {
   }
   
   .cats-container {
-    position: relative;
-    margin: auto;
-    background-image: linear-gradient(rgb(70, 70, 70), rgb(0, 0, 0));
+    display: flex;
     width: 60%;
+    background-image: linear-gradient(rgb(70, 70, 70), rgb(0, 0, 0));
+    justify-content: center;
+    margin: auto;
   }
   
-  .catSlides {
-    display: none;
+  .slider {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 10px;
+    overflow: hidden;
+  }
+
+  .slides {
+    width: 100%;
+    padding-top: 66%;
+  }
+
+  .catSlide {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    opacity: 0;
+  }
+
+  .catSlide img {
+    width: 100%;
+  }
+
+  .catSlide.active {
+    opacity: 1;
   }
   
   .prev, .next {
@@ -291,6 +324,10 @@ html {
     padding: 8px 12px;
     position: absolute;
     top: 0;
+  }
+
+  .slideNav {
+    text-align: center;
   }
   
   .dot {
