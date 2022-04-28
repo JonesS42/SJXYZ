@@ -29,6 +29,7 @@ window.onclick = function(event) {
 }
 
 //cat slide
+if (document.getElementsByClassName("cats-container") != null) {
 let slides = document.getElementsByClassName("catSlide");
 let dot = document.getElementsByClassName("dot");
 let currentSlide = 0;
@@ -59,6 +60,7 @@ document.querySelectorAll('.dot').forEach((bullet, bulletIndex) => {
         }
     })
 })
+}
 
 //experience description
 function expCollapse () {
