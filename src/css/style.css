@@ -421,7 +421,7 @@ html {
   }
   
   .expCollapse.active:after {
-    content: "\25B3";
+    content: '\25B3';
   }
   
   .experience button {

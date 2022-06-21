@@ -1,4 +1,4 @@
-import '../css/style.css';
+import './../css/style.css';
 
 function importAll(r) {
   r.keys().forEach(r)
@@ -60,60 +60,6 @@ document.querySelectorAll('.dot').forEach((bullet, bulletIndex) => {
         }
     })
 })
-}
-
-//experience description
-function expCollapse () {
-  var btn = document.getElementsByClassName("expCollapse");
-
-  for (var i = 0; i < btn.length; i++) {
-    btn[i].addEventListener("click", function (e) {
-
-      this.classList.toggle("expanded");
-      var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-          content.style.overflow = "hidden";
-      } else {
-          content.style.display = "block";
-      }
-
-      if (this.classList.contains("expanded")) {
-        content.querySelector(".descGradient").style.opacity  = "0";
-        content.classList.add("expanded");
-      } else {
-        content.querySelector(".descGradient").style.opacity  = "1";
-        content.classList.remove("expanded");
-      }
-  });
-  }
-}
-
-//skills animation
-
-function hovNull () {
-  var sTable = document.getElementById("sTable");
-  if (sTable != null) {
-    var srHov =  document.getElementsByClassName("skillRow");
-
-    for (var i = 0; i < srHov.length; i++) {
-      srHov[i].addEventListener("mouseenter", hovEnter);
-      srHov[i].addEventListener("mouseleave", hovLeave);
-    }
-
-    function hovEnter (e) {
-      var startIndex = 5 - e.target.children.length;
-      for (var i = startIndex; i < 5; i++) {
-        e.target.querySelector(`.ethr${i}`).classList.add("bounce");
-      }
-    }
-    
-    function hovLeave (e) {
-      var startIndex = 5 - e.target.children.length;
-      for (var i = startIndex; i < 5; i++) {
-        e.target.querySelector(".ethr" + i).classList.remove("bounce");
-      }
-    }
-  }
 }
 
 

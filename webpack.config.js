@@ -6,7 +6,7 @@ module.exports = {
   module: {
     rules: [
       { 
-        test: /\.css$/, 
+        test: /\.css$/i, 
         use: ["style-loader", "css-loader"] 
       },
       { 
@@ -20,14 +20,30 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      inject: true,
       template: './src/index.html',
+      filename: 'index.html',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: './src/resume.html',
+      filename: 'resume.html',
+      chunks: ['resume'],
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: './src/projects.html',
+      filename: 'projects.html',
+      chunks: ['main'],
     }),
   ],
   entry: {
     main: path.resolve(__dirname, './src/js/app.js'),
+    resume: path.resolve(__dirname, './src/js/resume.js'),
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
