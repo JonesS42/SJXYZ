@@ -420,7 +420,7 @@ html {
     margin-left: 5px;
   }
   
-  .expCollapse.active:after {
+  .expCollapseActive:after {
     content: '\25B3';
   }
   

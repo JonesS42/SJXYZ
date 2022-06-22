@@ -30,6 +30,7 @@ function expCollapse () {
     btn[i].addEventListener("click", function (e) {
 
       this.classList.toggle("expanded");
+      this.classList.toggle("expCollapseActive");
       var content = this.nextElementSibling;
       if (content.style.display === "block") {
           content.style.overflow = "hidden";
