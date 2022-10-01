@@ -35,12 +35,19 @@ module.exports = {
       inject: true,
       template: './src/projects.html',
       filename: 'projects.html',
+      chunks: ['projects'],
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: './src/hire.html',
+      filename: 'hire.html',
       chunks: ['main'],
     }),
   ],
   entry: {
     main: path.resolve(__dirname, './src/js/app.js'),
     resume: path.resolve(__dirname, './src/js/resume.js'),
+    projects: path.resolve(__dirname, './src/js/projects.js'),
   },
   output: {
     filename: '[name].js',

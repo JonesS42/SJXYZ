@@ -592,12 +592,52 @@ html {
     float: right;
   }
   
-  /*Arcade*/
-  .arcadeBody {
-    margin: 0px;
-    height: 100vh;
-  }
-  
-  .arcadeCanvas {
-    display: block;
-  }
+  /*Hire*/
+  .hire {
+    text-align: center;
+    padding: 16px;
+}
+
+.hireBody {
+  margin-left:25%;
+  margin-right: 25%;
+}
+
+.services {
+  margin-left:30%;
+  margin-right: 30%;
+}
+
+.services ul {
+  list-style-type: none;
+}
+
+/*projects*/
+.projects {
+  margin-left:25%;
+  margin-right: 25%;
+}
+
+.projectsContainer {
+  flex: 1;
+  padding: 1rem;
+}
+
+.card {
+  text-decoration: none;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 1.6rem;
+}
+
+.projectTitle {
+  position: absolute;
+  height: 100%;
+  padding: 1.6rem;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color:rgb(255, 255, 255)
+}
