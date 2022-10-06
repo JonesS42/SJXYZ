@@ -43,6 +43,12 @@ module.exports = {
       filename: 'hire.html',
       chunks: ['main'],
     }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: './src/actop.html',
+      filename: 'actop.html',
+      chunks: ['main'],
+    }),
   ],
   entry: {
     main: path.resolve(__dirname, './src/js/app.js'),

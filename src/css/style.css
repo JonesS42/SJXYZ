@@ -649,6 +649,7 @@ html {
   padding: 1rem;
 }
 
+/*
 .card {
   text-decoration: none;
   position: relative;
@@ -656,6 +657,7 @@ html {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+*/
 
 .mainCard {
   display: flex;
@@ -670,7 +672,8 @@ html {
 
 .projectContainer img {
   border-radius: 1.6rem;
-  max-width: 100%;
+  max-width: 90%;  
+  justify-content: center;
 }
 
 .projectTitle {
@@ -688,4 +691,144 @@ html {
   place-content: center;
   font-size: 2.5rem;
   text-align: center;
+}
+
+@keyframes cardEffect {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.card {
+  /* Customizable */
+  --card-color-bg: rgb(24 24 27);
+  --card-color-border: rgb(63 63 70);
+  --card-color-cardEffect: rgb(198, 198, 198);
+  --card-color-text: rgb(161 161 170);
+  --card-color-text-busy: rgb(113 113 122);
+  --card-border-width: 1px;
+  --card-bg-gradient-start: rgb(24 24 27);
+  --card-bg-gradient-end: rgb(39 39 42);
+  --card-cardEffect-animation: cardEffect 1.5s linear infinite;
+  --card-cardEffect-gradient-stops: transparent 135deg,
+    var(--card-color-cardEffect) 180deg, transparent 225deg;
+  --card-cardEffect-opacity: 1;
+  --card-radius: 1.6rem;
+  --card-transition-duration: 200ms;
+  --card-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --card-transition: var(--card-transition-duration)
+    var(--card-transition-easing);
+  --card-aspect-ratio-multiplier: 0.65;
+  /* Styles */
+  appearance: none;
+  position: relative;
+  border: 0;
+  font: inherit;
+  overflow: hidden;
+  margin: calc(var(--card-border-width) * -1);
+  /*padding: var(--card-border-width);*/
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 10%;
+  color: var(--card-color-text);
+  border-radius: var(--card-radius);
+  transform: none;
+  user-select: none;
+  will-change: transform;
+  background-color: var(--card-color-border);
+  /**
+   * This one's optional, it just stops the card from jumping around when the
+   * content width changes
+   */
+  min-width: 8rem;
+}
+
+.card:hover {
+  filter: brightness(0.95);
+}
+.card:active {
+  transform: scale(0.95);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    transition: var(--card-transition);
+    transition-property: color, filter, transform;
+  }
+}
+
+.card__content {
+  display: inline-flex;
+  position: relative;
+  border-radius: calc(var(--card-radius) - var(--card-border-width));
+  background-image: linear-gradient(
+    to top right,
+    var(--card-bg-gradient-start),
+    var(--card-bg-gradient-end)
+  );
+  background-color: var(--card-bg-gradient-end);
+  width: 100%;
+  justify-content: center;
+  padding: 0.625rem 1rem;
+  text-align: center;
+  z-index: 10;
+}
+
+.card__cardEffect,
+.card__cardEffect::before {
+  position: absolute;
+  width: 100%;
+}
+
+.card__cardEffect {
+  inset: 0;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%)
+    scaleX(
+      calc(var(--card-aspect-ratio) * var(--card-aspect-ratio-multiplier))
+    );
+  will-change: transform;
+}
+
+.card__cardEffect::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  min-height: 100%;
+  top: 50%;
+  aspect-ratio: 1/1;
+  transform-origin: center;
+  background-image: conic-gradient(var(--card-cardEffect-gradient-stops));
+  opacity: var(--card-cardEffect-opacity-enabled, 0);
+  /**
+   * This one's not strictly necessary, but I think it helps soften the gradient
+   * and reduces animation "easing".
+   */
+  filter: blur(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card__cardEffect::before {
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card__cardEffect::before {
+    animation: var(--card-cardEffect-animation);
+    animation-play-state: var(--card-cardEffect-animation-state, paused);
+    transition: var(--card-transition);
+    transition-property: opacity;
+  }
+}
+
+.card.is-busy {
+  --card-color-text: var(--card-color-text-busy);
+  --card-cardEffect-animation-state: running;
+  --card-cardEffect-opacity-enabled: var(--card-cardEffect-opacity);
+  cursor: progress;
 }
