@@ -672,7 +672,7 @@ html {
 
 .projectContainer img {
   border-radius: 1.6rem;
-  max-width: 90%;  
+  max-width: 95%;  
   justify-content: center;
 }
 
@@ -729,28 +729,22 @@ html {
   font: inherit;
   overflow: hidden;
   margin: calc(var(--card-border-width) * -1);
-  /*padding: var(--card-border-width);*/
   padding-top: 1rem;
   padding-bottom: 1rem;
-  padding-left: 10%;
+  padding-left: 5%;
+  margin-bottom: 2rem;
   color: var(--card-color-text);
   border-radius: var(--card-radius);
   transform: none;
   user-select: none;
   will-change: transform;
   background-color: var(--card-color-border);
-  /**
-   * This one's optional, it just stops the card from jumping around when the
-   * content width changes
-   */
   min-width: 8rem;
 }
 
 .card:hover {
-  filter: brightness(0.95);
-}
-.card:active {
-  transform: scale(0.95);
+  filter: brightness(0.90);
+  transform: scale(1.05);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -831,4 +825,26 @@ html {
   --card-cardEffect-animation-state: running;
   --card-cardEffect-opacity-enabled: var(--card-cardEffect-opacity);
   cursor: progress;
+}
+
+.actopHeader {
+  text-align: center;
+}
+
+.actopHeader a {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  height: 50px;
+  width: 100px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.actopContainer img {
+  width: 10%;
+}
+
+.actopContainer div {
+  text-align: center;
 }
