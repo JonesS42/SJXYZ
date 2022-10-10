@@ -4,6 +4,7 @@ const path = require('path');
 
 module.exports = {
   module: {
+    mode: 'development',
     rules: [
       { 
         test: /\.css$/i, 
