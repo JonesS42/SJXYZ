@@ -110,7 +110,7 @@ html {
   
   .modal-content {
       font-size: 28px;
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(0,0,0,0.95);
       padding: 16px;
       border: 1px solid #fff;
       width: 30%;
@@ -632,11 +632,51 @@ html {
 }
 
 .gitCard {
-  text-decoration: none;
-  padding: 1rem;
-  position: relative;
-  overflow: hidden;
   width: 50%;
+
+    /* Customizable */
+    --card-color-bg: rgb(24 24 27);
+    --card-color-border: rgb(63 63 70);
+    --card-color-cardEffect: rgb(198, 198, 198);
+    --card-color-text: rgb(161 161 170);
+    --card-color-text-busy: rgb(113 113 122);
+    --card-border-width: 1px;
+    --card-bg-gradient-start: rgb(24 24 27);
+    --card-bg-gradient-end: rgb(39 39 42);
+    --card-cardEffect-animation: cardEffect 1.5s linear infinite;
+    --card-cardEffect-gradient-stops: transparent 135deg,
+      var(--card-color-cardEffect) 180deg, transparent 225deg;
+    --card-cardEffect-opacity: 1;
+    --card-radius: 1.6rem;
+    --card-transition-duration: 200ms;
+    --card-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --card-transition: var(--card-transition-duration)
+      var(--card-transition-easing);
+    --card-aspect-ratio-multiplier: 0.65;
+    /* Styles */
+    appearance: none;
+    position: relative;
+    border: 0;
+    font: inherit;
+    overflow: hidden;
+    margin: calc(var(--card-border-width) * -1);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    color: var(--card-color-text);
+    border-radius: var(--card-radius);
+    transform: none;
+    user-select: none;
+    will-change: transform;
+    background-color: var(--card-color-border);
+    min-width: 8rem;
+}
+
+.gitCard:hover {
+  filter: brightness(0.90);
+  transform: scale(1.05);
 }
 
 .cardFlex {
@@ -829,6 +869,11 @@ html {
 
 .actopHeader {
   text-align: center;
+  display: flex;
+}
+
+.actopH1 {
+  flex: 1;
 }
 
 .actopHeader a {
@@ -837,14 +882,32 @@ html {
   border: 1px solid white;
   height: 50px;
   width: 100px;
-  padding: 10px;
+  padding: 5px;
   text-decoration: none;
+  margin: 1rem;
+}
+
+.actopH2 {
+  text-align: center;
 }
 
 .actopContainer img {
-  width: 10%;
+  width: 25%;
 }
 
 .actopContainer div {
   text-align: center;
+}
+
+
+.actopContainer video {
+  padding: 1rem;
+  width: 80%;
+  height: auto;
+}
+
+.actopContainer img {
+  padding: 1rem;
+  width: 80%;
+  height: auto;
 }

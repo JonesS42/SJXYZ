@@ -16,6 +16,17 @@ module.exports = {
           filename: "ImagesEtc/[name][ext]",
         },
       },
+      {
+        test: /\.(mov|mp4)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'ImagesEtc/[name].[ext]'
+            }  
+          }
+        ]
+      },
     ]
   },
   plugins: [

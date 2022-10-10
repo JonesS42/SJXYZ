@@ -1,4 +1,7 @@
 import './../css/style.css';
+import ccVid from './../ImagesEtc/CroquetClash.mp4';
+import hfVid from './../ImagesEtc/HeistFlight.mp4';
+import ffVid from './../ImagesEtc/FlightyFlap.mp4';
 
 //Contact button
 var modal = document.getElementById("contactModal");
