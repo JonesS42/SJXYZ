@@ -4,7 +4,6 @@ const path = require('path');
 
 module.exports = {
   module: {
-    mode: 'development',
     rules: [
       { 
         test: /\.css$/i, 
@@ -51,8 +50,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: './src/hire.html',
-      filename: 'hire.html',
+      template: './src/freelance.html',
+      filename: 'freelance.html',
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
