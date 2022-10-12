@@ -1,11 +1,12 @@
 import './../css/style.css';
 
+/*
 function importAll(r) {
   r.keys().forEach(r)
 }
 
-importAll(require.context('../ImagesEtc/', true, /\.(jpg|svg|png|gif)$/))
-
+importAll(require.context('./../ImagesEtc/', true, /\.(jpg|svg|png|gif)$/))
+*/
 
 //Contact button
 var modal = document.getElementById("contactModal");

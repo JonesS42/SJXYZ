@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   module: {
@@ -58,7 +59,14 @@ module.exports = {
       inject: true,
       template: './src/actop.html',
       filename: 'actop.html',
-      chunks: ['main'],
+      chunks: ['projects'],
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, "./src/ImagesEtc"),
+          to: path.resolve(__dirname, "dist/ImagesEtc")
+      },
+      ],
     }),
   ],
   entry: {
@@ -69,7 +77,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   devServer: {
     static: {
