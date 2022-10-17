@@ -64,7 +64,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: path.resolve(__dirname, "./src/ImagesEtc"),
-          to: path.resolve(__dirname, "workspace/ImagesEtc")
+          to: path.resolve(__dirname, "dist/ImagesEtc")
       },
       ],
     }),
@@ -76,12 +76,12 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'workspace'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'workspace', 'ImagesEtc'),
+      directory: path.resolve(__dirname, 'dist', 'ImagesEtc'),
       publicPath: '/'
     },
     hot: true,
