@@ -3,13 +3,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 const CopyPlugin = require("copy-webpack-plugin");
 
+
 module.exports = {
+  target: 'web',
   module: {
     rules: [
-      { 
-        test: /\.css$/i, 
-        use: ["style-loader", "css-loader"] 
-      },
       { 
         test: /\.(ico|svg|gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',
@@ -27,6 +25,13 @@ module.exports = {
             }  
           }
         ]
+      },
+      { 
+        test: /\.(css)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: "css/[name][ext]",
+        },
       },
     ]
   },
@@ -66,6 +71,9 @@ module.exports = {
         { from: path.resolve(__dirname, "./src/ImagesEtc"),
           to: path.resolve(__dirname, "dist/ImagesEtc")
       },
+      { from: path.resolve(__dirname, "./src/css"),
+          to: path.resolve(__dirname, "dist/css")
+      },
       ],
     }),
   ],
@@ -76,14 +84,15 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/'),
     publicPath: '/',
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'dist', 'ImagesEtc'),
+      directory: path.join(__dirname, 'dist', 'ImagesEtc'),
       publicPath: '/'
     },
+    watchFiles: ["./src/*"],
     hot: true,
     open: true
   },

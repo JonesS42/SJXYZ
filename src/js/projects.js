@@ -1,16 +1,10 @@
-import './../css/style.css';
-/*
-import ccVid from './../ImagesEtc/CroquetClash.mp4';
-import hfVid from './../ImagesEtc/HeistFlight.mp4';
-import ffVid from './../ImagesEtc/FlightyFlap.mp4';
-*/
-
+import '../css/style.css';
 //Contact button
 var modal = document.getElementById("contactModal");
 
 var btn = document.getElementById("contactBtn");
 
-var span = document.getElementsByClassName("close") [0];
+var span = document.getElementsByClassName("closeFlex") [0];
 
 btn.onclick = function() {
     modal.style.display = "block";

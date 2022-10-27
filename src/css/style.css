@@ -6,7 +6,7 @@ html {
   nav {
       background-color: black;
       color:white;
-      height: 100px;
+      margin: 1rem;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -24,13 +24,11 @@ html {
   }
   
   nav a {
-      height: 60px;
-      line-height: 60px;
       color:white;
       text-decoration: none;
       position:relative;
       z-index: 1;
-      padding: 20px;
+      padding: 1rem;
   }
   
   nav ul li a,
@@ -67,7 +65,7 @@ html {
     height: 100%;
   }
   
-  @media (max-width:800px) {
+  @media (max-width:600px) {
     nav {
       flex-direction: column;
     }
@@ -86,11 +84,16 @@ html {
       margin-right: 30px;
       padding: 8px 18px;
       border: 1px solid white;
-      height: 50px;
+      height: 40px;
       max-width: 100px;
       background-color: black;
       color: white;
       position: relative;
+  }
+  @media (max-width:600px) {
+    nav button {
+      justify-content: center;
+            }
   }
   
   nav button:hover {
@@ -107,91 +110,86 @@ html {
       position: relative;
       top: 2px;
   }
-  
-  .modal-content {
-      font-size: 28px;
-      background-color: rgba(0,0,0,0.95);
-      padding: 16px;
-      border: 1px solid #fff;
-      width: 30%;
-      height: 60%;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      display: none;
+
+  .modalFlex {
+    background-color: rgba(0,0,0,0.95);
+    border: 1px solid #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
   }
-  
-  .close {
-      color: #fff;
-      height: 10px;
-      float: right;
-      vertical-align: top;
-      font-size: 28px;
-      font-weight: bold;
+
+  .contactFlexContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+    position: relative;
   }
-  
-  .close:hover,
-  .close:focus {
+
+  .contactRow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 2vw;
+  }
+
+  .conImg {
+    width: 25%;
+    float: left;
+    padding: 1rem;
+  }
+
+  .conLink {
+    width: 75%;
+    float: right;
+  }
+
+  .conImg img {
+    width: 100%;
+  }
+
+  .closeFlex {
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    margin-right: 1rem;
+    position: relative;
+  }
+
+  .closeFlex:hover,
+  .closeFlex:focus {
       color: #aaa;
       text-decoration: none;
       cursor: pointer;
   }
   
-  .contactHead {
-      text-align: center;
-      height: 10px;
-      font-size: 2vw;
-      padding: 16px;
-  }
-  
-  .table {
-    table-layout: fixed;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .contactImgLink {
-    height: 0;
-    padding-top: 100%;
-    display: block;
-    position: relative;
-  }
-  
-  .contactImgCell {
-    max-width: 128px;
-    min-width: 32px;
-  }
-  
-  .contactImg {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .contactTxt {
-    font-size: 1.5vw;
-  }
-  
   /*About Me Styling*/
   .imgMe {
-      display: block;
-      position: relative;
       margin-left: auto;
       margin-right: auto;
+     /*width: 50%;*/
+    }
+
+    .imgContainer {
       width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      /*display: block;
+      height: auto;*/
+      position: relative;
+
     }
     
-    .imgMeResponsive {
+    .imgResponsive {
+      width: 100%;
       display: block;
       height: auto;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
+      /*position: relative;*/
     }
     
     .overlay {
@@ -206,16 +204,16 @@ html {
       transition: .5s ease;
     }
     
-    .imgMe:hover .overlay {
+    .imgContainer:hover .overlay {
       opacity: 1;
     }
     
-    .imgMeOver {
+    .imgOverlay {
       position: absolute;
       margin-left: auto;
       margin-right: auto;
       height: 100%;
-      width: 50%;
+      /*width: 50%;*/
       top: 0;
       left: 0;
       right: 0;
@@ -376,7 +374,7 @@ html {
     gap: 10px;
   }
   
-  @media (max-width:800px) {
+  @media (max-width:600px) {
     .resume-container {
       flex-direction: column;
     }
@@ -625,7 +623,7 @@ html {
   gap: 10px;
 }
 
-@media (max-width:800px) {
+@media (max-width:600px) {
   .projectContainer {
     flex-direction: column;
   }
@@ -731,6 +729,7 @@ html {
   place-content: center;
   font-size: 2.5rem;
   text-align: center;
+  text-shadow: 4px 4px 2px #000000;
 }
 
 @keyframes cardEffect {
@@ -876,7 +875,7 @@ html {
   flex: 1;
 }
 
-.actopHeader a {
+.backBtn a {
   background-color: black;
   color: white;
   border: 1px solid white;
@@ -902,12 +901,12 @@ html {
 
 .actopContainer video {
   padding: 1rem;
-  width: 80%;
+  width: 60%;
   height: auto;
 }
 
 .actopContainer img {
   padding: 1rem;
-  width: 80%;
+  width: 60%;
   height: auto;
 }
