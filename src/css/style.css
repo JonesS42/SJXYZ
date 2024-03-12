@@ -1,5 +1,6 @@
 html {
     font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
   }
   
   /*header nav*/
@@ -351,9 +352,9 @@ html {
   
   .fade {
     -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
+    -webkit-animation-duration: .5s;
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: .5s;
   }
   
   @-webkit-keyframes fade {
@@ -374,7 +375,7 @@ html {
     gap: 10px;
   }
   
-  @media (max-width:600px) {
+  @media (max-width:1000px) {
     .resume-container {
       flex-direction: column;
     }
@@ -383,6 +384,10 @@ html {
   .experience {
     flex: 1;
     padding: 1rem;
+  }
+
+  .experience b {
+    font-weight: 700;
   }
   
   .experience h1 {
@@ -433,9 +438,6 @@ html {
     font-size: 1.5rem;
   }
   
-  .experience p {
-    text-align: center;
-  }
   
   .description {
     padding: 18px;

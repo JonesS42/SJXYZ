@@ -1,10 +1,14 @@
 import '../css/style.css';
+
+/*const swiper = new Swiper('.swiper', {
+    speed: 400,
+}); */
 //Contact button
-var modal = document.getElementById("contactModal");
+const modal = document.getElementById("contactModal");
 
-var btn = document.getElementById("contactBtn");
+const btn = document.getElementById("contactBtn");
 
-var span = document.getElementsByClassName("closeFlex") [0];
+const span = document.getElementsByClassName("closeFlex") [0];
 
 btn.onclick = function() {
     modal.style.display = "block";
