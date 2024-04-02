@@ -63,14 +63,14 @@ function hovNull () {
     function hovEnter (e) {
       var startIndex = 5 - e.target.children.length;
       for (var i = startIndex; i < 5; i++) {
-        e.target.querySelector(`.ethr${i}`).classList.add("bounce");
+        e.target.querySelector(`.sunf${i}`).classList.add("bounce");
       }
     }
     
     function hovLeave (e) {
       var startIndex = 5 - e.target.children.length;
       for (var i = startIndex; i < 5; i++) {
-        e.target.querySelector(".ethr" + i).classList.remove("bounce");
+        e.target.querySelector(".sunf" + i).classList.remove("bounce");
       }
     }
   }

@@ -170,73 +170,44 @@ html {
   }
   
   /*About Me Styling*/
-  .imgMe {
-      margin-left: auto;
-      margin-right: auto;
-     /*width: 50%;*/
-    }
+.about {
+  text-align: center;
+  padding: 16px;
+}
 
-    .imgContainer {
-      width: 50%;
-      margin-left: auto;
-      margin-right: auto;
-      /*display: block;
-      height: auto;*/
-      position: relative;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    }
-    
-    .imgResponsive {
-      width: 100%;
-      display: block;
-      height: auto;
-      /*position: relative;*/
-    }
-    
-    .overlay {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0;
-      transition: .5s ease;
-    }
-    
-    .imgContainer:hover .overlay {
-      opacity: 1;
-    }
-    
-    .imgOverlay {
-      position: absolute;
-      margin-left: auto;
-      margin-right: auto;
-      height: 100%;
-      /*width: 50%;*/
-      top: 0;
-      left: 0;
-      right: 0;
-    }
-  
-  .about {
-      text-align: center;
-      padding: 16px;
-  }
-  
-  .aboutTxt {
-      margin-left:25%;
-      margin-right: 25%;
-  }
-  
-  .os-btn {
-      position: relative;
-  }
-  
-  .os-btn:active {
-      top: 2px;
-  }
+.imgMe {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.imgContainer {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.imgResponsive {
+  width: 100%;
+  display: block;
+  height: auto;
+  transition: transform 0.5s;
+}
+
+.imgContainer:hover .imgResponsive {
+  transform: scale(1.5);
+}
+
+.aboutTxt {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
   
   /*cat slideshow*/
   * {
@@ -246,6 +217,7 @@ html {
   .cats-container {
     display: flex;
     width: 60%;
+    max-width: 900px;
     background-image: linear-gradient(rgb(70, 70, 70), rgb(0, 0, 0));
     justify-content: center;
     margin: auto;
@@ -261,6 +233,7 @@ html {
   }
 
   .slides {
+    position: relative;
     width: 100%;
     padding-top: 66%;
   }
@@ -275,7 +248,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    transition: 1s;
+    transition: transform 3s;
     opacity: 0;
   }
 
@@ -350,23 +323,9 @@ html {
     background-color: #717171;
   }
   
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: .5s;
-    animation-name: fade;
-    animation-duration: .5s;
-  }
-  
-  @-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-  
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-  
+
+
+
   /*Resume Styling*/
   .resume-container {
     display: flex;
@@ -478,14 +437,14 @@ html {
     font-size: 2.5rem;
   }
   
-  .eth {
+  .sunflower {
     height: 3.5rem;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     transform-origin: bottom;
   }
   
-  .eth1 {
+  .sunflower1 {
     height: 3.5rem;
     animation-duration: 5s;
     animation-delay: .5s;
@@ -493,7 +452,7 @@ html {
     transform-origin: bottom;
   }
   
-  .eth2 {
+  .sunflower2 {
     height: 3.5rem;
     animation-duration: 5s;
     animation-delay: 1s;
@@ -501,7 +460,7 @@ html {
     transform-origin: bottom;
   }
   
-  .eth3 {
+  .sunflower3 {
     height: 3.5rem;
     animation-duration: 5s;
     animation-delay: 1.5s;
@@ -509,7 +468,7 @@ html {
     transform-origin: bottom;
   }
   
-  .eth4 {
+  .sunflower4 {
     height: 3.5rem;
     animation-duration: 5s;
     animation-delay: 2s;
@@ -548,7 +507,7 @@ html {
     animation-timing-function: ease;
   }
   
-  .ethr0 {
+  .sunf0 {
     height: 2.5rem;
     animation-duration: 5s;
     animation-iteration-count: infinite;
@@ -556,7 +515,7 @@ html {
     float: right;
   }
   
-  .ethr1 {
+  .sunf1 {
     height: 2.5rem;
     animation-duration: 5s;
     animation-delay: .5s;
@@ -565,7 +524,7 @@ html {
     float: right;
   }
   
-  .ethr2 {
+  .sunf2 {
     height: 2.5rem;
     animation-duration: 5s;
     animation-delay: 1s;
@@ -574,7 +533,7 @@ html {
     float: right;
   }
   
-  .ethr3 {
+  .sunf3 {
     height: 2.5rem;
     animation-duration: 5s;
     animation-delay: 1.5s;
@@ -583,7 +542,7 @@ html {
     float: right;
   }
   
-  .ethr4 {
+  .sunf4 {
     height: 2.5rem;
     animation-duration: 5s;
     animation-delay: 2s;
