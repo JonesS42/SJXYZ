@@ -171,32 +171,35 @@ html {
   
   /*About Me Styling*/
 .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   padding: 16px;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
+.h1content {
   align-items: center;
+  flex-basis: 0;
+  flex-shrink: 3;
 }
 
-.imgMe {
-  margin-bottom: 20px; /* Adjust as needed */
-}
 
 .imgContainer {
   width: 25%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  margin-bottom: 20px; 
+  flex-basis: 0;
+  flex-grow: 3;
 }
 
 .imgResponsive {
   width: 100%;
-  display: block;
   height: auto;
   transition: transform 0.5s;
+  flex-grow: 4.3;
 }
 
 .imgContainer:hover .imgResponsive {
@@ -204,16 +207,18 @@ html {
 }
 
 .aboutTxt {
+  flex-basis: 0;
   margin-left: 25%;
   margin-right: 25%;
+  flex-shrink: 3;
 }
 
   
-  /*cat slideshow*/
+  /*cat slideshow
   * {
     box-sizing:border-box
-  }
-  
+  }*/
+
   .cats-container {
     display: flex;
     width: 60%;
@@ -648,15 +653,6 @@ html {
   padding: 1rem;
 }
 
-/*
-.card {
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-*/
 
 .mainCard {
   display: flex;
@@ -798,10 +794,6 @@ html {
   transform-origin: center;
   background-image: conic-gradient(var(--card-cardEffect-gradient-stops));
   opacity: var(--card-cardEffect-opacity-enabled, 0);
-  /**
-   * This one's not strictly necessary, but I think it helps soften the gradient
-   * and reduces animation "easing".
-   */
   filter: blur(8px);
 }
 
