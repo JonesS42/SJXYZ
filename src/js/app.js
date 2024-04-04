@@ -42,16 +42,6 @@ if (document.getElementsByClassName("cats-container").length > 0) {
             moveTo = slides.length - 1;
         }
     
-        if (direction === "next") {
-            slides[currentSlide].style.transform = "translateX(-100%)";
-            slides[moveTo].style.transform = "translateX(0)";
-            console.log("next");
-        } else if (direction === "prev") {
-            slides[currentSlide].style.transform = "translateX(100%)";
-            slides[moveTo].style.transform = "translateX(0)";
-            console.log("prev");
-        }
-    
         slides[currentSlide].classList.toggle("active");
         slides[moveTo].classList.toggle("active");
         dot[currentSlide].classList.toggle("active");

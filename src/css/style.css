@@ -171,46 +171,35 @@ html {
   
   /*About Me Styling*/
 .about {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   text-align: center;
   padding: 16px;
 }
 
-.h1content {
+.content {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-basis: 0;
-  flex-shrink: 3;
 }
 
-
-.imgContainer {
-  width: 25%;
+.imgContainer img {
+  width: 300px;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   margin-bottom: 20px; 
-  flex-basis: 0;
-  flex-grow: 3;
-}
-
-.imgResponsive {
-  width: 100%;
   height: auto;
-  transition: transform 0.5s;
-  flex-grow: 4.3;
+  transition: width 0.5s ease;
 }
 
-.imgContainer:hover .imgResponsive {
-  transform: scale(1.5);
+.imgContainer img:hover {
+  width: 500px;
 }
 
 .aboutTxt {
-  flex-basis: 0;
   margin-left: 25%;
   margin-right: 25%;
-  flex-shrink: 3;
 }
 
   
@@ -253,7 +242,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    transition: transform 3s;
+    transition: transform 1s;
     opacity: 0;
   }
 
@@ -302,7 +291,8 @@ html {
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
-    top: 0;
+    bottom: 0;
+    right: 0;
   }
 
   .slideNav {
