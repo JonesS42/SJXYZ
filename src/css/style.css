@@ -597,7 +597,7 @@ html {
     --card-border-width: 1px;
     --card-bg-gradient-start: rgb(24 24 27);
     --card-bg-gradient-end: rgb(39 39 42);
-    --card-cardEffect-animation: cardEffect 1.5s linear infinite;
+    --card-cardEffect-animation: cardEffect 3s ease infinite;
     --card-cardEffect-gradient-stops: transparent 135deg,
       var(--card-color-cardEffect) 180deg, transparent 225deg;
     --card-cardEffect-opacity: 1;
@@ -622,6 +622,7 @@ html {
     color: var(--card-color-text);
     border-radius: var(--card-radius);
     transform: none;
+    transition: transform 0.2s ease;
     user-select: none;
     will-change: transform;
     background-color: var(--card-color-border);
@@ -630,7 +631,7 @@ html {
 
 .gitCard:hover {
   filter: brightness(0.90);
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .cardFlex {
@@ -698,7 +699,7 @@ html {
   --card-border-width: 1px;
   --card-bg-gradient-start: rgb(24 24 27);
   --card-bg-gradient-end: rgb(39 39 42);
-  --card-cardEffect-animation: cardEffect 1.5s linear infinite;
+  --card-cardEffect-animation: cardEffect 3s ease infinite;
   --card-cardEffect-gradient-stops: transparent 135deg,
     var(--card-color-cardEffect) 180deg, transparent 225deg;
   --card-cardEffect-opacity: 1;
@@ -722,6 +723,7 @@ html {
   color: var(--card-color-text);
   border-radius: var(--card-radius);
   transform: none;
+  transition: transform 0.5s ease;
   user-select: none;
   will-change: transform;
   background-color: var(--card-color-border);
@@ -730,7 +732,7 @@ html {
 
 .card:hover {
   filter: brightness(0.90);
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 @media (prefers-reduced-motion: no-preference) {

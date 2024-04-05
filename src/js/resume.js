@@ -1,24 +1,32 @@
 import '../css/style.css';
 //Contact button
-var modal = document.getElementById("contactModal");
+const modal = document.getElementById("contactModal");
+const btn = document.getElementById("contactBtn");
+const span = document.querySelector(".closeFlex");
 
-var btn = document.getElementById("contactBtn");
-
-var span = document.getElementsByClassName("closeFlex") [0];
-
-btn.onclick = function() {
+function openModal() {
     modal.style.display = "block";
 }
 
-span.onclick = function() {
+function closeModal() {
     modal.style.display = "none";
 }
 
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+btn.addEventListener("click", function() {
+    if (modal.style.display === "block") {
+        closeModal();
+    } else {
+        openModal();
     }
-}
+});
+
+span.addEventListener("click", closeModal);
+
+window.addEventListener("click", function(event) {
+    if (event.target !== modal && event.target !== btn) {
+        closeModal();
+    }
+});
 
 
 //experience description
